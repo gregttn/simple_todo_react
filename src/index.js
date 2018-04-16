@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/index.css';
-import App from './components/app';
+import Todos from './components/todos';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <App />
+  <Todos/>
   ,document.querySelector('.container'));
 registerServiceWorker();
