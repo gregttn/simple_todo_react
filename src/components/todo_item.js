@@ -5,13 +5,16 @@ class TodoItem extends Component {
     super(props);
 
     this.state = {
-      title: props.title
+      todo: props.todo
     }
   }
 
   render() {
+    const { todo } = this.state;
     return (
-      <ul className="list-group-item">{this.state.title}</ul>
+      <li className="list-group-item">
+          {todo.title}
+      </li>
     );
   }
 }
