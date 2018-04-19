@@ -14,6 +14,7 @@ class TodoItem extends Component {
     return (
       <li className="list-group-item">
           {todo.title}
+          <button className="btn btn-danger float-right">Delete</button>
       </li>
     );
   }
