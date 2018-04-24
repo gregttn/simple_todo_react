@@ -13,7 +13,7 @@ class TodoItem extends Component {
     const { todo } = this.state;
     return (
       <li className="list-group-item">
-          {todo.title}
+          <p>{todo.title}</p>
           <button className="btn btn-danger float-right">Delete</button>
       </li>
     );
