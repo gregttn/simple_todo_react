@@ -21,12 +21,13 @@ class CreateTodoBar extends Component {
 
   render() {
     return (
-      <form className="mt-4">
+      <form className="m-4">
         <div className="input-group">
           <input
             value={this.state.todo}
+            placeholder="Create new todo..."
             onChange={this.handleTodoChange.bind(this)}
-            className="form-control mr-2"/>
+            className="form-control form-control-lg mr-2"/>
           <button onClick={this.onAddClick.bind(this)}
               className="btn btn-primary">Add</button>
         </div>
