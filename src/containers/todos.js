@@ -19,7 +19,7 @@ class Todos extends Component {
   render() {
     return (
       <div>
-        <h4>Todos</h4>
+        <h5 className="text-center mt-5 mb-3">Your tasks...</h5>
         <ul className="list-group">
           {this.renderTodos()}
         </ul>
