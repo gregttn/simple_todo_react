@@ -28,8 +28,10 @@ class CreateTodoBar extends Component {
             placeholder="Create new todo..."
             onChange={this.handleTodoChange.bind(this)}
             className="form-control form-control-lg mr-2"/>
-          <button onClick={this.onAddClick.bind(this)}
-              className="btn btn-primary">Add</button>
+          <button
+            disabled={!this.state.todo}
+            onClick={this.onAddClick.bind(this)}
+            className="btn btn-primary">Add</button>
         </div>
       </form>
     );
