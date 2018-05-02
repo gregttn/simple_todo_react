@@ -9,7 +9,7 @@ body {
   display: table;
 }
 
-.list-group-item > p {
+.form-check-inline {
   display: table-cell;
   vertical-align: middle;
   float:none;

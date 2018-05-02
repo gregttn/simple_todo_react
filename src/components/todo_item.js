@@ -11,10 +11,18 @@ class TodoItem extends Component {
     const { todo } = this.props;
     return (
       <li className="list-group-item">
-          <p>{todo.title}</p>
-          <button
-            className="btn btn-danger float-right"
-            onClick={this.onDeleteClick.bind(this)}>Delete</button>
+        <div className="form-check-inline">
+          <input
+            className="form-check-input"
+            type="checkbox"/>
+          <label
+            className="form-check-label ml-2">
+              {todo.title}
+          </label>
+        </div>
+        <button
+          className="btn btn-danger float-right"
+          onClick={this.onDeleteClick.bind(this)}>Delete</button>
       </li>
     );
   }
