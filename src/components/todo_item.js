@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { deleteTodo } from '../actions/index';
+import { deleteTodo, updateCompleted } from '../actions/index';
 
 class TodoItem extends Component {
   onDeleteClick() {
     this.props.deleteTodo(this.props.todo.id);
+  }
+
+  onCompletedClick(event) {
+    this.props.updateCompleted(this.props.todo, event.target.checked)
   }
 
   render() {
@@ -16,6 +20,7 @@ class TodoItem extends Component {
             className="form-check-input"
             type="checkbox"
             defaultChecked={todo.completed}
+            onChange={this.onCompletedClick.bind(this)}
             />
           <label
             className="form-check-label ml-2">
@@ -34,4 +39,4 @@ function mapStateToProps({ todos }, ownProps) {
   return { todo: todos[ownProps.todoId] }
 }
 
-export default connect(mapStateToProps, { deleteTodo })(TodoItem);
+export default connect(mapStateToProps, { deleteTodo, updateCompleted })(TodoItem);

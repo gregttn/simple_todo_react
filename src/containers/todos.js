@@ -11,9 +11,11 @@ class Todos extends Component {
 
   renderTodos() {
     return _.map(this.props.todos, todo => {
-      return (
-          <TodoItem todoId={todo.id} key={todo.id}/>
-      );
+      if(!todo.completed) {
+        return (
+            <TodoItem todoId={todo.id} key={todo.id}/>
+        );
+      }
     })
   }
   render() {

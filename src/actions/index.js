@@ -1,6 +1,7 @@
 export const FETCH_TODOS = 'fetch_todos';
 export const DELETE_TODO = 'delete_todos';
 export const CREATE_TODO = 'create_todos';
+export const UPDATE_TODO = 'update_todos';
 
 const stub_todos = [
     {
@@ -45,6 +46,15 @@ export function createTodo(todoTitle) {
 
   return {
     type: CREATE_TODO,
+    payload: todo
+  };
+}
+
+export function updateCompleted(todo, completed) {
+  todo.completed = completed;
+
+  return {
+    type: UPDATE_TODO,
     payload: todo
   };
 }
