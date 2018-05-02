@@ -5,11 +5,18 @@ export const CREATE_TODO = 'create_todos';
 const stub_todos = [
     {
       'id': 1,
-      'title': "first todo"
+      'title': "first todo",
+      'completed': false
     },
     {
       'id': 2,
-      'title': "second todo"
+      'title': "second todo",
+      'completed': false
+    },
+    {
+      'id': 3,
+      'title': "completed todo",
+      'completed': true
     }
   ];
 
@@ -30,7 +37,8 @@ export function deleteTodo(id) {
 export function createTodo(todoTitle) {
   const todo = {
     'id': new Date().getTime(),
-    'title': todoTitle
+    'title': todoTitle,
+    'completed': false
   };
 
   stub_todos.push(todo);

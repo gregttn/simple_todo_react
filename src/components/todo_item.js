@@ -14,7 +14,9 @@ class TodoItem extends Component {
         <div className="form-check-inline">
           <input
             className="form-check-input"
-            type="checkbox"/>
+            type="checkbox"
+            defaultChecked={todo.completed}
+            />
           <label
             className="form-check-label ml-2">
               {todo.title}
