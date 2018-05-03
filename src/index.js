@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import './style/index.css';
 import Todos from './containers/todos';
 import CreateTodoBar from './components/create_todo_bar';
+import CompletedBadge from './components/completed_badge';
 import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './reducers/index';
 
@@ -15,6 +16,7 @@ ReactDOM.render(
     <div>
       <CreateTodoBar/>
       <Todos/>
+    <CompletedBadge />
     </div>
   </Provider>
   ,document.querySelector('.container'));
