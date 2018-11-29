@@ -1,30 +1,36 @@
+import axios from 'axios';
+
+export const FETCH_TODOS_STARTED = 'fetch_todos_started';
 export const FETCH_TODOS = 'fetch_todos';
 export const DELETE_TODO = 'delete_todos';
 export const CREATE_TODO = 'create_todos';
 export const UPDATE_TODO = 'update_todos';
-
-const stub_todos = [
-    {
-      'id': 1,
-      'title': "first todo",
-      'completed': false
-    },
-    {
-      'id': 2,
-      'title': "second todo",
-      'completed': false
-    },
-    {
-      'id': 3,
-      'title': "completed todo",
-      'completed': true
-    }
-  ];
+const API_URL = 'https://jsonplaceholder.typicode.com/todos'
 
 export function fetchTodos() {
+  return function(dispatch) {
+    dispatch(fetchTodosStarted());
+
+    return axios.get(API_URL)
+      .then(({ data }) => {
+          dispatch(setTodos(data));
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+}
+
+export function fetchTodosStarted() {
+  return {
+    type: FETCH_TODOS_STARTED
+  };
+}
+
+function setTodos(data) {
   return {
     type: FETCH_TODOS,
-    payload: stub_todos
+    payload: data
   };
 }
 
@@ -41,8 +47,6 @@ export function createTodo(todoTitle) {
     'title': todoTitle,
     'completed': false
   };
-
-  stub_todos.push(todo);
 
   return {
     type: CREATE_TODO,
