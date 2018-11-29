@@ -6,7 +6,7 @@ class CompletedBadge extends Component {
   render() {
     const completed = _.filter(this.props.todos, todo => todo.completed )
     return (
-      <div className="d-flex justify-content-center mt-4">
+      <div className="d-flex justify-content-center m-4">
         <span className="badge badge-pill badge-secondary p-2">
             {_.size(completed)} Completed tasks
         </span>
